@@ -240,4 +240,21 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+	
+    //验证码配置
+    'captcha' => [
+        //验证码的字符集
+        'codeSet' => '23456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        //设置验证码大小
+        'fontSize' => 18,
+        //添加混淆曲线
+        'useCurve' => false,
+        //设置图片的高度、宽度
+        'imageW' => 130,
+        'imageH' => 40,
+        //验证码位数
+        'length' =>4,
+        //验证成功后重置
+        'reset' =>true
+    ],
 ];
