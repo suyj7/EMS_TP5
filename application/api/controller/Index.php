@@ -1,9 +1,11 @@
 <?php
 namespace app\api\controller;
 
-use app\common\model\User;
 use think\Request;
 use think\Session;
+use app\common\model\User;
+use app\common\model\Device;
+use app\common\model\MonitorData;
 
 class Index
 {
@@ -49,5 +51,29 @@ class Index
 	public function getCaptcha() 
 	{
 		return captcha_src();
+	}
+	
+	public function getDevice()
+	{
+		$device = new Device;
+		$devices = $device->getDevice("admin");
+		
+		return $devices;
+	}
+	
+	public function getRealtimeData()
+	{
+		$monitorData = new MonitorData;
+		$realtimeData = $monitorData->getRealtimeData(1);
+		
+		return $realtimeData;
+	}
+	
+	public function getHistoryData()
+	{
+		$monitorData = new MonitorData;
+		$historyData = $monitorData->getHistoryData(1);
+		
+		return $historyData;
 	}
 }
