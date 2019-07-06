@@ -60,7 +60,7 @@ class Index
 		//获取用户名
 		$postData = Request::instance()->post();
 		$user = $postData['user'];
-		
+		//获取用户名下的设备
 		$device = new Device;
 		$devices = $device->getDevice($user);
 		
